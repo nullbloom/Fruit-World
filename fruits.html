@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FruitWorld - Expandable Fruit Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffaf0;
+      color: #1b5e20;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .fruit-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 960px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .fruit-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      max-width: 280px;
+      background: #ffffff;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .fruit-card:hover {
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .fruit-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    h3 {
+      margin: 10px 0 0 0;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .toggle-input {
+      display: none;
+    }
+
+    .toggle-label {
+      display: inline-block;
+      margin-top: 12px;
+      background-color: #66bb6a;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+      text-align: center;
+      width: 100%;
+      font-weight: 600;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease;
+    }
+    .toggle-label:hover {
+      background-color: #4caf50;
+    }
+
+    .extra-info {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      margin-top: 0;
+    }
+
+    .toggle-input:checked ~ .extra-info {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 15px;
+    }
+
+    /* Arrow icons */
+    .toggle-label::after {
+      content: " ▼";
+      float: right;
+    }
+    .toggle-input:checked + .toggle-label::after {
+      content: " ▲";
+    }
+
+    .extra-info p, .extra-info ul, .extra-info a {
+      margin: 6px 0;
+    }
+
+    .extra-info ul {
+      padding-left: 20px;
+    }
+
+    .extra-info a {
+      color: #388e3c;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 8px;
+    }
+    .extra-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 650px) {
+      .fruit-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="fruit-grid">
+
+    <!-- Apple Card -->
+    <div class="fruit-card">
+      <img src="./aset/apple-2788616_1280.jpg" alt="Apple" />
+      <h3>Apple</h3>
+
+      <input type="checkbox" id="toggle-apple" class="toggle-input" />
+      <label for="toggle-apple" class="toggle-label">More Info</label>
+
+      <div class="extra-info">
+        <p>Apples are rich in fiber and vitamin C. Great for heart health!</p>
+        <ul>
+          <li>Calories: 95</li>
+          <li>Fiber: 4g</li>
+          <li>Vitamin C: 14%</li>
+        </ul>
+        <a href="apple.html">View full page →</a>
+      </div>
+    </div>
+
+    <!-- Banana Card -->
+    <div class="fruit-card">
+      <img src="./aset/banana-1025109_1280.jpg" alt="Banana" />
+      <h3>Banana</h3>
+
+      <input type="checkbox" id="toggle-banana" class="toggle-input" />
+      <label for="toggle-banana" class="toggle-label">More Info</label>
+
+      <div class="extra-info">
+        <p>Bananas provide potassium and help maintain blood pressure.</p>
+        <ul>
+          <li>Calories: 105</li>
+          <li>Potassium: 422 mg</li>
+          <li>Vitamin B6: 20%</li>
+        </ul>
+        <a href="banana.html">View full page →</a>
+      </div>
+    </div>
+
+    <!-- Strawberry Card -->
+    <div class="fruit-card">
+      <img src="./aset/strawberries-56995_1280.jpg" alt="Strawberry" />
+      <h3>Strawberry</h3>
+
+      <input type="checkbox" id="toggle-strawberry" class="toggle-input" />
+      <label for="toggle-strawberry" class="toggle-label">More Info</label>
+
+      <div class="extra-info">
+        <p>Strawberries are packed with antioxidants and vitamin C.</p>
+        <ul>
+          <li>Calories: 49</li>
+          <li>Fiber: 3g</li>
+          <li>Vitamin C: 149%</li>
+        </ul>
+        <a href="strawberry.html">View full page →</a>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
